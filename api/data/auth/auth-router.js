@@ -17,7 +17,8 @@ router.post('/register', checkUserData, checkUsernameUnique, (req, res, next) =>
     User.add(user)
         .then(saved =>
         {
-            res.status(201).json(saved);
+            const token = makeToken(user);
+            res.status(201).json({ user: saved, token: token });
         })
         .catch(next);
 });
