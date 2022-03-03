@@ -3,7 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 const authRouter = require('./data/auth/auth-router');
-const plantsRouter = require('./data/plants/plants-router');
+const productsRouter = require('./data/products/products-router');
 
 const jsonErrorHandler = async (err, req, res, next) =>
 {
@@ -18,7 +18,7 @@ server.use(helmet());
 server.use(cors());
 
 server.use('/api/users', authRouter);
-server.use('/api/plants', plantsRouter);
+server.use('/api/products', productsRouter);
 server.use(jsonErrorHandler);
 
 module.exports = server;
