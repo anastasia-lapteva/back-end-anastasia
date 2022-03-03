@@ -1,6 +1,6 @@
 const express = require('express');
-const Product = require('./products-model');
-const { restricted } = require('../middleware/restricted');
+const Product = require('./products-model.js');
+const { restricted } = require('../middleware/restricted.js');
 
 const router = express.Router();
 
